@@ -1,38 +1,42 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Floorball Calendar</title>
+    <title>Floorball Kalender</title>
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body class="page">
     <header class="page__header">
-      <h1 class="page__title">Floorball Calendar</h1>
-      <nav class="page__nav">
-        <a href="#" hx-get="/fragments/upcoming-games.html" hx-target="#content" hx-swap="innerHTML">
-          Upcoming games
-        </a>
-        <a href="#" hx-get="/fragments/training-sessions.html" hx-target="#content" hx-swap="innerHTML">
-          Training sessions
-        </a>
-      </nav>
+      <h1 class="page__title">Floorball Kalender</h1>
+      <p class="page__tagline">Wähle Verein und Team, um den Spielplan als ICS zu laden.</p>
     </header>
 
-    <main
-      id="content"
-      class="page__content"
-      hx-target="this"
-      hx-swap="innerHTML"
-      hx-get="/fragments/landing.html"
-      hx-trigger="load"
-    ></main>
+    <main class="page__content">
+      <section class="card">
+        <h2 class="card__title">Team-Kalender herunterladen</h2>
+        <p class="card__intro">
+          Der Saisonmanager wird live abgefragt. Du erhältst bei jedem Download die
+          aktuellsten Spieltermine für dein Team.
+        </p>
+        <div
+          id="workflow"
+          class="card__body"
+          hx-get="/ui/workflow"
+          hx-trigger="load"
+          hx-target="this"
+          hx-swap="innerHTML"
+        >
+          <p class="workflow__hint">Lade Vereine...</p>
+        </div>
+      </section>
+    </main>
 
     <footer class="page__footer">
-      <small>&copy; Floorball Calendar</small>
+      <small>&copy; Floorball Kalender &ndash; Datenquelle: saisonmanager.de</small>
     </footer>
 
     <script type="module" src="/src/main.ts"></script>

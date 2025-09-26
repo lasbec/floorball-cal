@@ -4,7 +4,7 @@
   line-height: 1.5;
   font-weight: 400;
   color: #0f172a;
-  background-color: #f1f5f9;
+  background-color: #eef2ff;
 }
 
 body {
@@ -16,44 +16,26 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   gap: 1.5rem;
-  padding: 2rem;
+  padding: 2.5rem 1.5rem;
   max-width: 960px;
   margin: 0 auto;
-  background: radial-gradient(circle at top left, #e0f2fe, #f8fafc);
 }
 
 .page__header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
+  display: grid;
+  gap: 0.5rem;
 }
 
 .page__title {
   margin: 0;
-  font-size: 2rem;
+  font-size: 2.25rem;
   color: #1e3a8a;
 }
 
-.page__nav {
-  display: flex;
-  gap: 1rem;
-}
-
-.page__nav a {
-  text-decoration: none;
-  font-weight: 600;
-  color: #1d4ed8;
-  padding: 0.4rem 0.75rem;
-  border-radius: 0.5rem;
-  transition: background-color 150ms ease, color 150ms ease;
-}
-
-.page__nav a:hover,
-.page__nav a:focus {
-  background-color: rgba(29, 78, 216, 0.12);
-  color: #1e3a8a;
+.page__tagline {
+  margin: 0;
+  color: #334155;
+  max-width: 48rem;
 }
 
 .page__content {
@@ -61,38 +43,106 @@ body {
 }
 
 .card {
-  background-color: rgba(255, 255, 255, 0.85);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
-  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  box-shadow: 0 25px 55px rgba(30, 64, 175, 0.12);
+  backdrop-filter: blur(12px);
 }
 
-.card h2 {
-  margin-top: 0;
+.card__title {
+  margin: 0 0 0.5rem 0;
   color: #0f172a;
 }
 
-.list {
+.card__intro {
+  margin: 0 0 1.5rem 0;
+  color: #475569;
+}
+
+.card__body {
+  min-height: 9rem;
+}
+
+.workflow {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.workflow__step {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.workflow__form {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.workflow__step--inactive {
+  opacity: 0.7;
+}
+
+.workflow__label {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.workflow__select {
+  appearance: none;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #0f172a;
+  box-shadow: 0 10px 25px rgba(29, 78, 216, 0.08);
+}
+
+.workflow__select:focus {
+  outline: 3px solid rgba(59, 130, 246, 0.35);
+}
+
+.workflow__actions {
   display: grid;
   gap: 0.75rem;
+}
+
+.workflow__summary {
   margin: 0;
-  padding: 0;
-  list-style: none;
+  color: #1e293b;
 }
 
-.list__item {
-  display: grid;
-}
-
-.list__title {
+.workflow__download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
+  color: #fff;
   font-weight: 600;
-  color: #0f172a;
+  box-shadow: 0 15px 30px rgba(29, 78, 216, 0.35);
+  transition: transform 150ms ease, box-shadow 150ms ease;
 }
 
-.list__meta {
-  font-size: 0.875rem;
-  color: #334155;
+.workflow__download:hover,
+.workflow__download:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 22px 40px rgba(29, 78, 216, 0.4);
+}
+
+.workflow__hint {
+  margin: 0;
+  color: #64748b;
+}
+
+.workflow__error {
+  margin: 0;
+  color: #b91c1c;
+  font-weight: 600;
 }
 
 .page__footer {
@@ -103,16 +153,10 @@ body {
 
 @media (max-width: 640px) {
   .page {
+    padding: 2rem 1rem;
+  }
+
+  .card {
     padding: 1.5rem;
-  }
-
-  .page__header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .page__nav {
-    width: 100%;
-    justify-content: space-around;
   }
 }
