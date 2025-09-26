@@ -1,0 +1,118 @@
+:root {
+  color-scheme: light dark;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #0f172a;
+  background-color: #f1f5f9;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+  background: radial-gradient(circle at top left, #e0f2fe, #f8fafc);
+}
+
+.page__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.page__title {
+  margin: 0;
+  font-size: 2rem;
+  color: #1e3a8a;
+}
+
+.page__nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.page__nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #1d4ed8;
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.page__nav a:hover,
+.page__nav a:focus {
+  background-color: rgba(29, 78, 216, 0.12);
+  color: #1e3a8a;
+}
+
+.page__content {
+  display: grid;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #0f172a;
+}
+
+.list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list__item {
+  display: grid;
+}
+
+.list__title {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.list__meta {
+  font-size: 0.875rem;
+  color: #334155;
+}
+
+.page__footer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #475569;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 1.5rem;
+  }
+
+  .page__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page__nav {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
