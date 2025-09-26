@@ -1,3 +1,4 @@
+import path from 'node:path';
 import express from 'express';
 import { z } from 'zod';
 import { createCalendarFile } from './calendar';
@@ -6,7 +7,10 @@ import { Club, Team } from './types';
 
 const app = express();
 
+const publicDirectory = path.join(__dirname, '..', 'public');
+
 app.use(express.json());
+app.use(express.static(publicDirectory));
 
 const port = Number.parseInt(process.env.PORT ?? '3000', 10);
 
