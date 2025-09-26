@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Floorball Calendar</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body class="page">
+    <header class="page__header">
+      <h1 class="page__title">Floorball Calendar</h1>
+      <nav class="page__nav">
+        <a href="#" hx-get="/fragments/upcoming-games.html" hx-target="#content" hx-swap="innerHTML">
+          Upcoming games
+        </a>
+        <a href="#" hx-get="/fragments/training-sessions.html" hx-target="#content" hx-swap="innerHTML">
+          Training sessions
+        </a>
+      </nav>
+    </header>
+
+    <main
+      id="content"
+      class="page__content"
+      hx-target="this"
+      hx-swap="innerHTML"
+      hx-get="/fragments/landing.html"
+      hx-trigger="load"
+    ></main>
+
+    <footer class="page__footer">
+      <small>&copy; Floorball Calendar</small>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
