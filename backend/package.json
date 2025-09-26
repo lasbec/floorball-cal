@@ -1,0 +1,14 @@
+{
+  "name": "floorball-cal-backend",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Lasse Becker",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}
